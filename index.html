@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Surprise</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            background-image: url('IMG_0472.jpg'); /* Ganti 'background.jpg' dengan nama file gambar Anda */
+            background-size: cover;
+            background-position: center;
+            font-family: 'Lucida Handwriting', cursive; /* Ganti dengan font alternatif jika 'Lucida Handwriting' tidak tersedia */
+        }
+
+        .container {
+            text-align: center;
+        }
+
+        .login-box {
+            margin-bottom: 50px;
+            font-style: italic;
+            font-family: 'Lucida Handwriting', cursive; /* Ganti dengan font alternatif jika 'Lucida Handwriting' tidak tersedia */
+        }
+
+        button {
+            padding: 10px 20px;
+            font-size: 18px;
+            background-color: #ff0066;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .message-box {
+            background-color: rgba(255, 0, 102, 0.8);
+            color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 400px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .message {
+            font-size: 24px;
+            margin: 0;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="login-box" id="loginBox">
+            <button onclick="showMessage()">Masuk</button>
+        </div>
+        <div class="message-box" id="messageBox" style="display:none;">
+            <p class="message">I LOVE YOU</p>
+            <p class="message">CEZAR CLAUDI AZZAHRA</p>
+            
+        </div>
+    </div>
+
+    <script>
+        function showMessage() {
+            document.getElementById('loginBox').style.display = 'none';
+            document.getElementById('messageBox').style.display = 'block';
+        }
+    </script>
+</body>
+</html>
