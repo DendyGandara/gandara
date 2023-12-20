@@ -15,61 +15,91 @@
             background-image: url('IMG_0472.jpg'); /* Ganti 'background.jpg' dengan nama file gambar Anda */
             background-size: cover;
             background-position: center;
-            font-family: 'Lucida Handwriting', cursive; /* Ganti dengan font alternatif jika 'Lucida Handwriting' tidak tersedia */
+            font-family: 'Calibri (Body)', cursive; /* Ganti dengan font alternatif jika 'Lucida Handwriting' tidak tersedia */
         }
 
         .container {
             text-align: center;
         }
 
-        .login-box {
-            margin-bottom: 50px;
+        .login-box, .apology-box {
+            margin-bottom: 250px;
             font-style: italic;
-            font-family: 'Lucida Handwriting', cursive; /* Ganti dengan font alternatif jika 'Lucida Handwriting' tidak tersedia */
+            font-family: 'Calibri (Body)', cursive; /* Ganti dengan font alternatif jika 'Lucida Handwriting' tidak tersedia */
+            
+            
         }
 
         button {
             padding: 10px 20px;
             font-size: 18px;
-            background-color: #ff0066;
-            color: #fff;
-            border: none;
             border-radius: 5px;
             cursor: pointer;
         }
 
-        .message-box {
-            background-color: rgba(255, 0, 102, 0.8);
+        .message-box, .apology-box {
+            background-color: rgba(255, 0, 102, 0.7);
             color: #fff;
-            padding: 20px;
+            padding: 7px;
             border-radius: 10px;
-            margin-bottom: 400px;
+            margin-bottom: 470px; /* Mengurangi margin untuk menyesuaikan tata letak tombol */
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
         }
 
-        .message {
+        .message, .apology {
             font-size: 24px;
             margin: 0;
             font-weight: bold;
+        }
+
+        .button-container {
+            display: flex;
+            margin-bottom: -30px;
+            justify-content: center;
+            box-shadow: 0 0 300px rgba(0, 0, 0, 0.2);
+            border-radius: 10px;
+        }
+
+        .action-button {
+            margin: 0 10px;
+            font-family: 'Calibri (Body)', cursive;
+            background: rgba(255, 0, 0, 0.8); /* Ubah nilai transparansi (0.8) sesuai kebutuhan Anda */
+            color: #fff;
+            box-shadow: 0 0 300px rgba(0, 0, 0, 0.8);
+            border: none;
+
         }
     </style>
 </head>
 <body>
     <div class="container">
         <div class="login-box" id="loginBox">
-            <button onclick="showMessage()">Masuk</button>
+            <button class="action-button" onclick="showLoveMessage()">PUSH ME</button>
         </div>
-        <div class="message-box" id="messageBox" style="display:none;">
+        <div class="message-box" id="loveMessageBox" style="display:none;">
             <p class="message">I LOVE YOU</p>
             <p class="message">CEZAR CLAUDI AZZAHRA</p>
-            
+        </div>
+        <div class="button-container" style="display:none;" id="buttonContainer">
+            <button class="action-button" onclick="showApologyMessage()">Pencet ini dong</button>
+        </div>
+        <div class="apology-box" id="apologyMessageBox" style="display:none;">
+            <p class="apology">Maaf ya kalo aku banyak salah..</p>
+            <p class="apology">Maaf juga kalo aku banyak kekurangan..</p>
         </div>
     </div>
 
     <script>
-        function showMessage() {
+        function showLoveMessage() {
             document.getElementById('loginBox').style.display = 'none';
-            document.getElementById('messageBox').style.display = 'block';
+            document.getElementById('loveMessageBox').style.display = 'block';
+            document.getElementById('buttonContainer').style.display = 'flex'; // Menampilkan container tombol
+        }
+
+        function showApologyMessage() {
+            document.getElementById('loveMessageBox').style.display = 'none';
+            document.getElementById('buttonContainer').style.display = 'none'; // Menyembunyikan container tombol
+            document.getElementById('apologyMessageBox').style.display = 'block';
         }
     </script>
 </body>
